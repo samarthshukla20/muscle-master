@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Initialize AOS
   AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
 
-  // 2. Mobile Menu Toggle (Bulletproof Fix)
+// 2. Mobile Menu Toggle (Cleaned up for Desktop)
   const oldHamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
   
@@ -36,19 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = oldHamburger.cloneNode(true);
     oldHamburger.parentNode.replaceChild(hamburger, oldHamburger);
 
-    // Add the fresh, guaranteed listener
+    // Toggle menu
     hamburger.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      
       navLinks.classList.toggle('mobile-active');
       hamburger.classList.toggle('toggle');
-      
-      if (navLinks.classList.contains('mobile-active')) {
-        navLinks.style.setProperty('display', 'flex', 'important');
-      } else {
-        navLinks.style.setProperty('display', 'none', 'important');
-      }
+      // Notice: Removed the inline style properties here!
     });
 
     // Close menu when a link is clicked
@@ -56,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('mobile-active');
         hamburger.classList.remove('toggle');
-        navLinks.style.setProperty('display', 'none', 'important');
       });
     });
 
@@ -65,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('mobile-active')) {
         navLinks.classList.remove('mobile-active');
         hamburger.classList.remove('toggle');
-        navLinks.style.setProperty('display', 'none', 'important');
       }
     });
   }
