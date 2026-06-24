@@ -627,8 +627,8 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     track.appendChild(card);
 
-    // Create Dot (Limit to max 20 dots so it doesn't clutter)
-    if (dotsContainer && index < 20) {
+    // Create Dot (Limit to max 15 dots so it doesn't clutter)
+    if (dotsContainer && index < 15) {
       const dot = document.createElement('div');
       dot.className = `carousel-dot ${index === 0 ? 'active' : ''}`;
       dot.addEventListener('click', () => {
