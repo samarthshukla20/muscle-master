@@ -453,6 +453,194 @@ section { padding: 100px 5%; }
   margin: 0 auto; /* Centers the form perfectly below the map segment */
 }
 
+/* =========================================
+   NATIVE REVIEWS CAROUSEL
+   ========================================= */
+/* Summary Bar */
+.reviews-summary-bar {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+}
+
+.summary-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.summary-stars i { color: #fbbc04; font-size: 1.2rem; }
+.summary-score { color: #fff; font-weight: 700; font-size: 1.2rem; }
+.summary-count { color: var(--text-muted); font-size: 0.95rem; }
+
+.write-review-btn {
+  background: var(--orange);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s;
+}
+.write-review-btn:hover { transform: translateY(-2px); }
+
+/* Carousel Layout */
+.reviews-carousel-container {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+.reviews-track::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
+
+.carousel-arrow {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 15px;
+  transition: color 0.2s;
+  z-index: 10;
+}
+.carousel-arrow:hover { color: var(--orange); }
+
+/* Individual Cards */
+.review-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 28px;
+  min-width: 340px;
+  max-width: 340px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Avatar Header */
+.review-header { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+.review-avatar {
+  width: 45px; height: 45px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 700; font-size: 1.1rem;
+}
+.author-name { color: #fff; font-weight: 600; font-size: 1.05rem; }
+
+/* Stars & Meta */
+.review-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.review-stars i { color: #fbbc04; font-size: 0.9rem; }
+.review-time { color: var(--text-muted); font-size: 0.85rem; }
+
+/* Body & Text Clamping */
+.review-body { flex-grow: 1; margin-bottom: 20px; }
+.review-text {
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Hides text after 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.review-text.expanded {
+  -webkit-line-clamp: initial; /* Removes the limit when expanded */
+}
+
+.show-more-btn {
+  background: none; border: none;
+  color: #fff; font-weight: 600; text-decoration: underline;
+  cursor: pointer; padding: 0; margin-top: 8px; font-size: 0.9rem;
+}
+
+/* Footer (Google Logo) */
+.review-footer {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; color: var(--text-muted);
+}
+.google-logo-sm { height: 16px; }
+
+/* Auto-Scroll Controls */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.carousel-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 60%; /* Prevents dots from taking over the screen on mobile */
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #555;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dot:hover {
+  transform: scale(1.2);
+}
+
+.carousel-dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+.carousel-counter {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-left: 10px;
+}
+
+.play-pause-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 5px;
+}
+
+.play-pause-btn:hover {
+  color: #fff;
+}
+
+/* Mobile Adjustments */
+@media(max-width: 768px) {
+  .reviews-summary-bar { flex-direction: column; gap: 20px; text-align: center; }
+  .carousel-arrow { display: none; } /* On mobile, they just swipe! */
+  .review-card { min-width: 300px; max-width: 300px; }
+}
+
 /* Map and Address Flex Layout */
 .info-map-flex {
   display: flex;
