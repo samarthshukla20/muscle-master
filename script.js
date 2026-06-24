@@ -6,23 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (pageLoader && heroVideo) {
     const removeLoader = () => {
-      // Small delay ensures the typing animation finishes even on incredibly fast internet
       setTimeout(() => {
         pageLoader.classList.add('hidden');
-        // Remove from DOM entirely after fade out to keep things clean
         setTimeout(() => pageLoader.remove(), 600); 
-      }, 1500); 
+      }, 1000); // Shortened delay since we are now waiting for actual playback
     };
 
-    // Check if the video is already loaded from browser cache
-    if (heroVideo.readyState >= 3) { 
+    // Check if the video is already actively playing from cache
+    if (heroVideo.currentTime > 0 && !heroVideo.paused && !heroVideo.ended && heroVideo.readyState > 2) { 
       removeLoader();
     } else {
-      // If not, wait for it to buffer enough data to play
-      heroVideo.addEventListener('canplay', removeLoader);
+      // Wait for the video to actually start rendering moving frames
+      heroVideo.addEventListener('playing', removeLoader);
       
-      // Fallback: If the video fails or takes too long (over 6 seconds), force hide the loader
-      setTimeout(removeLoader, 6000); 
+      // Fallback: If mobile strict-autoplay policies block the video, hide loader after 5 seconds
+      setTimeout(removeLoader, 5000); 
     }
   }
   
