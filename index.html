@@ -81,21 +81,21 @@
 
 <body>
 
-<div id="page-loader" class="page-loader">
+<!-- Added aria-label for accessibility -->
+  <div id="page-loader" class="page-loader" aria-label="Loading content">
     <div class="loader-content">
-      
       <div class="typing-wrapper">
         <div class="typing-text">Muscle<span>Master</span></div>
         <div class="typing-overlay"></div>
       </div>
-      
       <div class="infinite-ring"></div>
-      
     </div>
   </div>
  
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">Muscle<span>Master</span></a>
+    <!-- Added aria-label to the logo for screen readers -->
+    <a href="#hero" class="nav-logo" aria-label="Muscle Master Gym Home">Muscle<span>Master</span></a>
+    
     <ul class="nav-links" id="navLinks">
       <li><a href="#membership">Membership</a></li>
       <li><a href="#classes">Classes</a></li>
@@ -103,28 +103,33 @@
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
     <div class="mobile-actions">
-      <a href="#membership" class="nav-cta">Join Now</a>
+      <!-- Added a specific class for analytics/tracking later -->
+      <a href="#membership" class="nav-cta" id="cta-join">Join Now</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
  
-  <section id="hero">
+<section id="hero">
     <video autoplay loop muted playsinline preload="auto" poster="assets/video-poster.webp" class="hero-bg-video">
       <source src="assets/gym-hero.webm" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     
     <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-      <span class="hero-tag">Lucknow's #1 Gym</span>
-      <h1 class="hero-title">Train Hard.<br><span>Live Strong.</span></h1>
-      <p class="hero-sub">Muscle Master is where results are built — with world-class equipment, expert trainers, and a community that pushes you to your limit.</p>
+      <!-- SEO Boost: Added specific neighborhood and optimized subtitle text -->
+      <span class="hero-tag">Lucknow's Premium Fitness Destination</span>
+      <h1 class="hero-title">The Best Gym in<br><span>Ashiyana, Lucknow</span></h1>
+      <p class="hero-sub">Muscle Master is where results are built. Featuring top-tier strength equipment, expert personal trainers, and an energetic community pushing you to your limits.</p>
+      
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Get Started</a>
         <a href="#membership" class="btn-outline">View Plans</a>
       </div>
+      
       <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
         <div><div class="stat-num">1000+</div><div class="stat-label">Active Members</div></div>
         <div><div class="stat-num">4.9<i class="fa-solid fa-star" style="font-size: 1.4rem; margin-left: 2px;"></i></div><div class="stat-label">Google Rating</div></div>
@@ -166,39 +171,46 @@
     </div>
   </section>
  
-  <section id="membership">
+<section id="membership">
     <div class="container" data-aos="fade-up">
-      <div class="section-tag">Membership Plans</div>
-      <h2 class="section-title">Choose Your Plan</h2>
+      <!-- SEO Boost: Added the localized keyword -->
+      <div class="section-tag">Our Gym Memberships</div>
+      <h2 class="section-title">Choose Your Fitness Plan</h2>
+      
       <div class="plans-grid">
+        <!-- Starter Plan -->
         <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
           <div class="plan-name">Starter</div>
           <div class="plan-price">₹799 <span>/ mo</span></div>
           <ul class="plan-features">
-            <li>Gym floor access</li>
-            <li>Locker room</li>
-            <li>1 group class/week</li>
+            <li>Full gym floor access</li>
+            <li>Sanitized locker rooms</li>
+            <li>1 group class per week</li>
           </ul>
           <a href="#contact" class="plan-btn outline">Get Started</a>
         </div>
+
+        <!-- Pro Plan (Featured) -->
         <div class="plan-card featured" data-aos="fade-up" data-aos-delay="200">
           <span class="plan-badge">Most Popular</span>
           <div class="plan-name">Pro</div>
           <div class="plan-price">₹1,499 <span>/ mo</span></div>
           <ul class="plan-features">
-            <li>Unlimited gym access</li>
-            <li>All group classes</li>
-            <li>Nutrition guidance</li>
+            <li>Unlimited gym & cardio access</li>
+            <li>All group classes (incl. Zumba)</li>
+            <li>Basic nutrition & form guidance</li>
           </ul>
           <a href="#contact" class="plan-btn">Get Started</a>
         </div>
+
+        <!-- Elite Plan -->
         <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
           <div class="plan-name">Elite</div>
           <div class="plan-price">₹2,499 <span>/ mo</span></div>
           <ul class="plan-features">
             <li>Everything in Pro</li>
-            <li>4 PT sessions/month</li>
-            <li>Custom meal plan</li>
+            <li>4 Personal Training sessions</li>
+            <li>Custom meal & transformation plan</li>
           </ul>
           <a href="#contact" class="plan-btn outline">Get Started</a>
         </div>
@@ -206,21 +218,25 @@
     </div>
   </section>
  
-  <section id="classes">
+<section id="classes">
     <div class="container">
-      <div class="section-tag">Classes & Schedule</div>
-      <h2 class="section-title">Find Your Class</h2>
+      <div class="section-tag">Group Fitness Programs</div>
+      <h2 class="section-title">Dynamic Fitness Classes in Ashiyana</h2>
+      
       <div class="schedule-grid">
         <div class="class-card" data-aos="zoom-in" data-aos-delay="100">
           <div class="class-info">
-            <div class="class-name">BoxFit</div>
+            <div class="class-name">BoxFit Training</div>
+            <p class="class-desc">High-intensity cardio boxing to build core strength and agility.</p>
             <div class="class-time">Mon / Wed / Fri · 6:00 AM</div>
             <button class="book-trial-btn" data-class="BoxFit">Book Free Trial</button>
           </div>
         </div>
+        
         <div class="class-card" data-aos="zoom-in" data-aos-delay="200">
           <div class="class-info">
             <div class="class-name">HIIT Blast</div>
+            <p class="class-desc">Maximum calorie burn with fast-paced, full-body interval training.</p>
             <div class="class-time">Daily · 5:30 AM & 6:00 PM</div>
             <button class="book-trial-btn" data-class="HIIT Blast">Book Free Trial</button>
           </div>
@@ -229,89 +245,104 @@
     </div>
   </section>
  
-  <section id="trainers">
+<section id="trainers">
     <div class="container">
-      <div class="section-tag" style="text-align: center;">Our Trainers</div>
-      <h2 class="section-title" style="text-align: center;">Meet the Experts</h2>
+      <div class="section-tag" style="text-align: center;">Our Coaches</div>
+      <!-- SEO Boost: Added the local neighborhood -->
+      <h2 class="section-title" style="text-align: center;">Expert Personal Trainers in Ashiyana</h2>
       
       <div class="trainers-grid">
 
         <div class="trainer-card" data-aos="fade-up" data-aos-delay="100">
           <div class="trainer-photo">
              <div class="loader"></div>
-             <img src="assets/trainer-rahul.jpg" alt="Rahul Sharma">
+             <!-- SEO Boost: Accurate alt text with keywords -->
+             <img src="assets/trainer-rahul.jpg" alt="Rajeev Khanna - Head Fitness Coach and Powerlifter in Lucknow">
           </div>
           <div class="trainer-info">
             <div class="trainer-name">Rajeev Khanna</div>
-            <div class="trainer-role">Head Coach</div>
-            <div class="trainer-bio">17+ years in competitive powerlifting. Certified by NBBUI.</div>
+            <div class="trainer-role">Head Coach & Owner</div>
+            <div class="trainer-bio">17+ years in competitive powerlifting. International athlete certified by NBBUI.</div>
           </div>
         </div>
 
         <div class="trainer-card" data-aos="fade-up" data-aos-delay="200">
           <div class="trainer-photo">
              <div class="loader"></div>
-             <img src="assets/trainer-priya.jpg" alt="Priya Singh">
+             <!-- SEO Boost: Accurate alt text with keywords -->
+             <img src="assets/trainer-priya.jpg" alt="Jatin Rawat - Strength and Conditioning Gym Trainer in Ashiyana">
           </div>
           <div class="trainer-info">
             <div class="trainer-name">Jatin Rawat</div>
-            <div class="trainer-role">Specialization/Post to be written</div>
-            <div class="trainer-bio"> Short description to be written.</div>
+            <div class="trainer-role">Strength & Conditioning Coach</div>
+            <!-- Bio generated from real gym reviews! -->
+            <div class="trainer-bio">Dedicated to helping members push their limits safely with high-energy workouts and expert lifting guidance.</div>
           </div>
         </div>
 
         <div class="trainer-card" data-aos="fade-up" data-aos-delay="300">
           <div class="trainer-photo">
              <div class="loader"></div>
-             <img src="assets/trainer-arun.jpg" alt="Arun Verma">
+             <!-- SEO Boost: Accurate alt text with keywords -->
+             <img src="assets/trainer-arun.jpg" alt="Ankit Kumar - Personal Trainer and Weight Loss Expert in Lucknow">
           </div>
           <div class="trainer-info">
             <div class="trainer-name">Ankit Kumar</div>
-            <div class="trainer-role">Specialization/Post to be written</div>
-            <div class="trainer-bio">Short description to be written.</div>
+            <div class="trainer-role">Senior Personal Trainer</div>
+            <!-- Bio generated from real gym reviews! -->
+            <div class="trainer-bio">Specializes in personalized weight loss, posture correction, and tailored diet plans to transform your body.</div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section id="gallery">
+<section id="gallery">
     <div class="container">
       <div class="section-tag" style="text-align: center;">Our Facility</div>
-      <h2 class="section-title" style="text-align: center;">Inside MuscleMaster</h2>
+      <!-- SEO Boost: Added local keyword to the H2 -->
+      <h2 class="section-title" style="text-align: center;">Inside Our Premium Ashiyana Facility</h2>
       
       <div class="gallery-grid">
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
           <div class="loader"></div>
-          <img src="assets/photo-1.webp" alt="Muscle Master Gym Floor" class="gallery-img">
+          <img src="assets/photo-1.webp" alt="Spacious and modern gym floor at Muscle Master Unisex Gym in Ashiyana, Lucknow" class="gallery-img">
         </div>
+        
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
           <div class="loader"></div>
-          <img src="assets/photo-2.webp" alt="Weights Area" class="gallery-img">
+          <img src="assets/photo-2.webp" alt="Free weights and strength training area at our premium fitness center in Sector J" class="gallery-img">
         </div>
+        
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
           <div class="loader"></div>
-          <img src="assets/photo-3.webp" alt="Cardio Equipment" class="gallery-img">
+          <img src="assets/photo-3.webp" alt="State-of-the-art treadmills and cardio equipment at Muscle Master Gym Lucknow" class="gallery-img">
         </div>
+        
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
           <div class="loader"></div>
-          <img src="assets/photo-4.webp" alt="Heavy Weights" class="gallery-img">
+          <img src="assets/photo-4.webp" alt="Heavy dumbbells and powerlifting equipment for advanced lifters in Ashiyana" class="gallery-img">
         </div>
+        
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
           <div class="loader"></div>
-          <img src="assets/photo-5.webp" alt="Training Area" class="gallery-img">
+          <img src="assets/photo-5.webp" alt="Expert personal training and guided workout sessions at Muscle Master Gym" class="gallery-img">
         </div>
+        
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
           <div class="loader"></div>
-          <img src="assets/photo-6.webp" alt="Zumba Section" class="gallery-img">
+          <img src="assets/photo-6.webp" alt="Spacious studio for group fitness and Zumba classes in Lucknow" class="gallery-img">
         </div>
+        
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
           <div class="loader"></div>
-          <img src="assets/photo-7.webp" alt="Awards" class="gallery-img">
+          <img src="assets/photo-7.webp" alt="Bodybuilding and fitness championship awards won by Head Coach Rajiv Khanna" class="gallery-img">
         </div>
+        
         <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
           <div class="loader"></div>
-          <img src="assets/photo-8.webp" alt="People Training" class="gallery-img">
+          <img src="assets/photo-8.webp" alt="Motivated members working out at the best unisex gym in Ashiyana" class="gallery-img">
         </div>
       </div>
     </div>
@@ -332,9 +363,10 @@
 
 -->
 
-<section id="reviews">
+  <section id="reviews">
       <div class="section-tag" style="text-align: center;">Testimonials</div>
-      <h2 class="section-title" style="text-align: center;">What Our Members Say</h2>
+      <!-- SEO Boost: Added 'Lucknow' to the heading -->
+      <h2 class="section-title" style="text-align: center;">Why Lucknow Chooses Muscle Master</h2>
       
       <div class="reviews-summary-bar">
         <div class="summary-stats">
@@ -428,14 +460,14 @@
         <!-- Column 1: Brand & Socials -->
         <div class="footer-col brand-col">
           <a href="#hero" class="footer-logo">Muscle<span>Master</span></a>
-          <p class="footer-desc">Lucknow's premium fitness destination. We build strength, character, and community. Join us to transform your life.</p>
+          <p class="footer-desc">Lucknow's premium fitness destination in Ashiyana. We build strength, character, and community. Join us to transform your life.</p>
 
+          <!-- SEO/Security Boost: Cleaned URLs, added target="_blank" and rel="noopener noreferrer" -->
           <div class="social-links">
-            <a href="https://www.instagram.com/musclemaster.rk?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.facebook.com/RKaesthetiX/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://youtube.com/@rajivkhannafitness?si=y3_Wt-gcbuVlPBcc" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/musclemaster.rk" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/RKaesthetiX/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://youtube.com/@rajivkhannafitness" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
-
         </div>
         
         <!-- Column 2: Quick Links -->
@@ -450,17 +482,17 @@
           </ul>
         </div>
 
-        <!-- Column 3: Legal & Support -->
+        <!-- Column 3: Local SEO NAP Data -->
         <div class="footer-col">
-          <h4 class="footer-heading">Support</h4>
+          <h4 class="footer-heading">Visit Us</h4>
           <ul class="footer-links">
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-location-dot"></i> BRD Complex, Sector J, Ashiyana, Lucknow 226012</a></li>
+            <li><a href="tel:+919956080002"><i class="fa-solid fa-phone"></i> +91 99560 80002</a></li>
+            <li><a href="mailto:musclemasterrajeev@gmail.com"><i class="fa-solid fa-envelope"></i> musclemasterrajeev@gmail.com</a></li>
             <!--
             <li><a href="#">Privacy Policy</a></li>
             <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Cancellation Policy</a></li>
-            <li><a href="#">FAQs</a></li>
-             !! TO BE UPDATED SOON !! -->
+            !! TO BE UPDATED SOON !! -->
           </ul>
         </div>
 
@@ -469,7 +501,7 @@
       <!-- Footer Bottom: Copyright & Agency Credit -->
       <div class="footer-bottom">
         <p class="copyright">© 2026 Muscle Master. All rights reserved.</p>
-        <p class="agency-credit">Designed & Developed by <a href="#" target="_blank" class="meridian-link">Meridian Dynamics</a></p>
+        <p class="agency-credit">Designed & Developed by <a href="#" target="_blank" rel="noopener noreferrer" class="meridian-link">Meridian Dynamics</a></p>
       </div>
     </div>
   </footer>

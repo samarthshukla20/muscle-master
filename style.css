@@ -205,6 +205,7 @@ section { padding: 100px 5%; }
 .schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
 .class-card { padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
 .class-name { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+.class-desc {font-size: 0.9rem; color: #a0a0a0; margin: 8px 0 16px 0; line-height: 1.4;}
 .class-time { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; }
 .book-trial-btn { background: transparent; border: 1px solid var(--orange); color: var(--orange); width: 100%; }
 .book-trial-btn:hover { background: var(--orange); color: #fff; }
